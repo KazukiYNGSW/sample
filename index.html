@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+     <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+    
+  </head>
+  <body>
+    
+<center>
+
+<center><h1>hooked counter</h1></center>
+
+<form method="get" action="input_reset.html">
+
+<table class="osare5-table col4t">
+<thead>
+	<tbody>
+		<tr>
+      <center>
+			<th></th>
+			<th>hooked</th>
+			<th>skil1</th>
+			<th>skil2</th>
+      </center>
+		</tr>
+		<tr>
+			<th>プレイヤー1
+        <br>
+        <input type="text" size="10" maxlength="10" value="" placeholder="">
+        </th>
+			<td>
+       <center>
+        <div class="group">
+<span class="count" max="3" >0</span>
+<br>
+<input type="button" value="カウント">
+  </div>
+</div>
+        </center>
+      </td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+    </center>
+		</tr>
+		<tr>
+			<th>プレイヤー2<br>
+        <input type="text" size="10" maxlength="10" value="" placeholder=""></th>
+			<td><center>
+        <div class="group">
+<span class="count">0</span>
+<br>
+<input type="button" value="カウント">
+</div>
+        </center></td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+		</tr>
+		<tr>
+			<th>プレイヤー3<br>
+        <input type="text" size="10" maxlength="10" value="" placeholder=""></th>
+			<td><center>
+       <div class="group">
+<span class="count">0</span>
+<br>
+<input type="button" value="カウント">
+</div>
+        </center></td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+		</tr>
+		<tr>
+			<th>プレイヤー4<br>
+        <input type="text" size="10" maxlength="10" value="" placeholder=""></th>
+			<td><center>
+        <div class="group">
+<span class="count">0</span>
+<br>
+<input type="button" value="カウント">
+</div>
+        </center></td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+			<td>
+        <center>
+        <input type="checkbox">
+        </center>
+      </td>
+		</tr>
+	</tbody>
+</table>
+
+<br>
+
+</form>
+
+
+
+</center>
+
+  </body>
+
+
+</html>
+
+
+
+ <!--jQueryのCDN読み込み-->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+
+  </script>
+
+
+  <script>
+jQuery(".group").each(function(){
+    jQuery(this).find('input[type="button"]').click(function(){
+        var s = jQuery(this).parent('.group').find('.count');
+        s.text(parseInt(s.text(), 10)+1);
+    });
+});
+
+const text = document.getElementById('textbox');
+const reset = document.getElementById('reset');
+
+ //ボタンが押されたら0に戻る
+  reset.addEventListener('click', (event) => {
+    text.value = 0;
+  })
+
+
+  </script>
+
+
+ </script>
